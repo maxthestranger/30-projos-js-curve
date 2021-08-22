@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+@font-face {
+  font-family: 'Digital Dismay';
+  src: url('../fonts/DigitalDismay.otf') format('opentype');
+}
+
+*,
+**::after,
+**::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background: #c8d5e7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+}
+
+#app {
+  font-family: 'Digital Dismay', sans-serif;
+  background: linear-gradient(
+    330deg,
+    rgba(220, 230, 240, 1) 0%,
+    rgba(230, 238, 247, 1) 35%,
+    rgba(235, 243, 249, 1) 100%
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+  height: calc(100vh - 500px);
+  border-radius: 10px;
+  box-shadow: 1px 2px 10px -3px rgba(116, 121, 125, 0.62);
+  -webkit-box-shadow: 1px 2px 10px -3px rgba(116, 121, 125, 0.62);
+  -moz-box-shadow: 1px 2px 10px -3px rgba(116, 121, 125, 0.62);
+  font-size: 180px;
+}
+
+.time {
+  color: #333630;
+}
