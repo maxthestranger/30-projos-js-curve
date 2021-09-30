@@ -15,8 +15,8 @@
   </tr>
   <tr>
     <td>2</td>
-    <td><a href="https://github.com/maxthestranger/main.py">Clock</a></td>
-    <td>Data types,casting</td>
-    <td>0.5</td>
+    <td><a href="https://github.com/maxthestranger/30-projos-js-curve/tree/main/todo">Todo</a></td>
+    <td>Data types, Functions, Refactoring, Decoupling, DOM, Events, LocalStorage</td>
+    <td>0.25</td>
   </tr>  
 </table>
