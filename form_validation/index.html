@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Validation</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <form class="card">
+        <div class="row">
+          <h4>Tell us about you</h4>
+          <p class="info">
+            Please tell a bit about you so that we can personalize your
+            onboarding experience .
+          </p>
+        </div>
+        <div class="row form-group">
+          <label for="username">Username</label>
+          <input type="text" name="username" id="username" />
+          <p class="message"></p>
+        </div>
+        <div class="row form-group">
+          <label for="email">Email</label>
+          <input type="email" name="email" id="email" />
+        </div>
+        <div class="row form-group">
+          <label for="password">Password</label>
+          <input type="text" name="password" id="password" />
+        </div>
+        <div class="row form-group">
+          <label for="confirm_password">Confirm Password</label>
+          <input type="text" name="confirm_password" id="confirm_password" />
+        </div>
+        <div class="row">
+          <button type="submit">
+            <span class="spanned"
+              >Procede to next step <i class="bi bi-arrow-right"></i
+            ></span>
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
