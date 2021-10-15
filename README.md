@@ -26,4 +26,9 @@
     <td><a href="https://github.com/maxthestranger/30-projos-js-curve/tree/main/form_validation">Form Validation</a></td>
     <td style="text-align: center"><a href="https://code.maxthestranger.com/projects/js/form_validation">View</a></td>
   </tr>  
+  <tr>
+    <td>4</td>
+    <td><a href="https://github.com/maxthestranger/30-projos-js-curve/tree/main/form_validation">Budget Tracker</a></td>
+    <td style="text-align: center"><a href="https://code.maxthestranger.com/projects/js/budget_tracker">View</a></td>
+  </tr> 
 </table>
