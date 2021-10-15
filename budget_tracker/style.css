@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #fff;
+  font-family: 'Roboto', sans-serif;
+  color: #313438;
+}
+
+.container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+}
+
+.row {
+  min-height: 100vh;
+  padding: 65px 52px;
+}
+
+.row-xl {
+  width: 60%;
+}
+
+.row-l {
+  width: 40%;
+}
+
+.title {
+  color: inherit;
+  font-size: 27px;
+  font-weight: bold;
+  margin-bottom: 35px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  color: inherit;
+  margin-bottom: 10px;
+  font-size: 15px;
+  color: #3d4044;
+}
+
+input,
+select {
+  padding: 14px 14px;
+  color: #8d9194;
+  font-size: 12px;
+  background: #f6f8fa;
+  border: 1px solid #f6f8fa;
+  border-radius: 6px;
+  outline: none;
+  transition: all 0.3s ease-in-out;
+}
+
+input:focus {
+  border: 1px solid #4239f9;
+}
+
+input::placeholder {
+  color: #8d9194;
+  font-size: 12px;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none; /* Remove default arrow */
+  background-image: url(./chevron-down.svg);
+  background-repeat: no-repeat;
+  background-position: right 1% bottom 50%;
+}
+
+hr {
+  border: 3px solid #f4edff;
+  height: 5px;
+}
+
+.table {
+  margin-top: 30px;
+}
+
+.tr {
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #f4edff;
+}
+
+.details h5 {
+  color: #111018;
+  margin-bottom: 12px;
+  font-size: 16px;
+}
+
+.details p {
+  color: #a9a8ad;
+  margin-bottom: 20px;
+  font-size: 12px;
+}
+
+.amount {
+  font-weight: bold;
+  color: #111018;
+}
+
+.danger {
+  color: #f55a7c;
+}
+
+.success {
+  color: #5af5a0;
+}
+
+.btn {
+  border: none;
+  background: #4239f9;
+  color: #fff;
+  padding: 12px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn:hover {
+  background: #584ff3;
+}
+
+.divs {
+  width: 100%;
+  padding: 24px 23px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f5f9fa;
+  margin-bottom: 24px;
+  border-radius: 10px;
+}
+
+.expense {
+  background: rgba(255, 235, 205, 0.3);
+}
+
+.income {
+  background: #eafaf0;
+}
+
+.net {
+  background: #eeedfc;
+}
+
+.more-info p {
+  margin-bottom: 12px;
+  color: #a9a8ad;
+}
+
+.percent {
+  font-weight: 600;
+}

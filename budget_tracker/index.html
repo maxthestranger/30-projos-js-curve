@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Budget Tracker</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="row row-xl">
+        <div class="title">
+          <h4>Daily Transactions</h4>
+        </div>
+        <form>
+          <div class="form-group">
+            <p class="error danger"></p>
+          </div>
+          <div class="form-group">
+            <label for="name">Transaction Name</label>
+            <input
+              type="text"
+              name="name"
+              id="name"
+              placeholder="Enter the transaction name"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="amount">Amount (-(expense) +(Income)</label>
+            <input
+              type="number"
+              name="amount"
+              id="amount"
+              placeholder="Enter the transaction Amount"
+            />
+          </div>
+
+          <div class="form-group">
+            <button type="submit" class="btn">Add transaction</button>
+          </div>
+        </form>
+        <hr />
+        <div class="table"></div>
+      </div>
+      <div class="row row-l">
+        <div class="divs expense">
+          <img src="" alt="" class="img-fluid" />
+          <div class="more-info">
+            <p>Expense</p>
+            <h3>$0.00</h3>
+          </div>
+          <p class="percent">24%</p>
+        </div>
+        <div class="divs income">
+          <img src="" alt="" class="img-fluid" />
+          <div class="more-info">
+            <p>Income</p>
+            <h3>$0.00</h3>
+          </div>
+          <p class="percent">24%</p>
+        </div>
+        <div class="divs net">
+          <img src="" alt="" class="img-fluid" />
+          <div class="more-info">
+            <p>Net</p>
+            <h3>$0.00</h3>
+          </div>
+          <p class="percent">24%</p>
+        </div>
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
