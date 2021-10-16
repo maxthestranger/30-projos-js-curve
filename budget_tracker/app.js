@@ -1,5 +1,7 @@
+// html qurries
+localStorage.clear();
 const transForm = document.querySelector('form');
-const inputDivs = document.querySelectorAll('input');
+const errorP = document.querySelector('.error');
 const date = new Date();
 const [month, day, year] = [date.getMonth(), date.getDay(), date.getFullYear()];
 const [hour, minute, second] = [
@@ -13,6 +15,7 @@ const table = document.querySelector('.table');
 const expenseDiv = document.querySelector('.expense h3');
 const incomeDiv = document.querySelector('.income h3');
 const netDiv = document.querySelector('.net h3');
+const deleteBtn = document.querySelectorAll('.btn-delete');
 
 const transaction = {};
 const profile = {
@@ -21,28 +24,25 @@ const profile = {
   net: 0.0,
 };
 
-// Events
-transForm.addEventListener('submit', function (e) {
-  e.preventDefault();
-  inputDivs.forEach((input) => {
-    if (input.name === 'name') {
-      transaction.transName = input.value;
-      input.value = '';
-    }
+// functions
 
-    if (input.name === 'amount') {
-      transaction.transAmount = input.value;
-      input.value = '';
-    }
+function assignValues(formData) {
+  errorP.innerText = '';
+  transaction.transName = formData.get('name');
+  transaction.transAmount = formData.get('amount');
+  transaction.transDate = `${day} ${month} ${year}, ${hour}:${minute}`;
+  localStorage.setItem('transactions', JSON.stringify(transaction));
+  formData.delete('name');
+  formData.delete('amount');
+}
 
-    transaction.transDate = `${day} ${month} ${year}, ${hour}:${minute}`;
-  });
-
+function transElements() {
+  const transaction = JSON.parse(localStorage.getItem('transactions'));
   const newRow = document.createElement('div');
   newRow.classList.add('tr');
-
   newRow.innerHTML = `
   <div class="details">
+  <button class="btn-delete"><i class="bi bi-x"></i></button>
     <h5>${transaction.transName}</h5>
     <p>${transaction.transDate}</p>
   </div>
@@ -52,16 +52,60 @@ transForm.addEventListener('submit', function (e) {
   `;
 
   table.appendChild(newRow);
+}
 
+function updateValues() {
+  const transaction = JSON.parse(localStorage.getItem('transactions'));
   if (transaction.transAmount.match(/^-/g)) {
     profile.expenses += Math.abs(+transaction.transAmount);
     expenseDiv.innerText = profile.expenses;
-    profile.net += profile.income - profile.expenses;
+    profile.net = profile.income - profile.expenses;
     netDiv.innerText = profile.net;
   } else {
     profile.income += +transaction.transAmount;
     incomeDiv.innerText = profile.income;
-    profile.net += profile.income - profile.expenses;
+    profile.net = profile.income - profile.expenses;
     netDiv.innerText = profile.net;
+  }
+}
+
+function deleteTrans(btn) {
+  let detailParent = btn.parentElement.parentElement;
+  let elemValue = detailParent.children[1];
+
+  if (elemValue.classList.contains('amount')) {
+    if (elemValue.innerText.match(/^-/g)) {
+      profile.expenses -= Math.abs(elemValue.innerText);
+      expenseDiv.innerText = profile.expenses;
+      profile.net = profile.income - profile.expenses;
+      netDiv.innerText = profile.net;
+    } else {
+      profile.income -= elemValue.innerText;
+      incomeDiv.innerText = profile.income;
+      profile.net = profile.income - profile.expenses;
+      netDiv.innerText = profile.net;
+    }
+  }
+
+  detailParent.remove();
+}
+
+// Events
+transForm.addEventListener('submit', function (e) {
+  e.preventDefault();
+  let formData = new FormData(transForm);
+
+  if (formData.get('name') === '' || formData.get('amount') === '') {
+    errorP.innerText = 'All fields are required';
+  } else {
+    assignValues(formData);
+    transElements();
+    updateValues();
+  }
+});
+
+table.addEventListener('click', function (e) {
+  if (e.target.classList.contains('btn-delete')) {
+    deleteTrans(e.target);
   }
 });
