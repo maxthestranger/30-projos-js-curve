@@ -198,3 +198,57 @@ hr {
 .percent {
   font-weight: 600;
 }
+
+.img-fluid {
+  max-width: 50px;
+  height: auto;
+}
+
+@media (max-width: 1153px) {
+  .container {
+    width: 80%;
+  }
+}
+
+@media (max-width: 900px) {
+  .container {
+    width: 90%;
+  }
+}
+
+@media (max-width: 750px) {
+  .container {
+    width: 100%;
+  }
+}
+
+@media (max-width: 684px) {
+  .container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .row {
+    min-height: auto;
+    padding: 0;
+  }
+
+  .row-l {
+    width: 60%;
+  }
+}
+
+@media (max-width: 400px) {
+  .row-xl {
+    margin-top: 200px;
+  }
+
+  .row-l {
+    width: 60%;
+  }
+
+  .title {
+    margin-bottom: 0;
+  }
+}

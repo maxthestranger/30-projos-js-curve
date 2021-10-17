@@ -1,5 +1,5 @@
 // html qurries
-localStorage.clear();
+// localStorage.clear();
 const transForm = document.querySelector('form');
 const errorP = document.querySelector('.error');
 const date = new Date();
@@ -17,7 +17,7 @@ const incomeDiv = document.querySelector('.income h3');
 const netDiv = document.querySelector('.net h3');
 const deleteBtn = document.querySelectorAll('.btn-delete');
 
-const transaction = {};
+const transaction = [];
 const profile = {
   expenses: 0.0,
   income: 0.0,
@@ -28,51 +28,61 @@ const profile = {
 
 function assignValues(formData) {
   errorP.innerText = '';
-  transaction.transName = formData.get('name');
-  transaction.transAmount = formData.get('amount');
-  transaction.transDate = `${day} ${month} ${year}, ${hour}:${minute}`;
+  const transObj = new Object();
+  transObj.transName = formData.get('name');
+  transObj.transAmount = formData.get('amount');
+  transObj.transDate = `${day} ${month} ${year}, ${hour}:${minute}`;
+  transaction.push(transObj);
   localStorage.setItem('transactions', JSON.stringify(transaction));
+  updateLive(transObj.transName, transObj.transAmount, transObj.transDate);
   formData.delete('name');
   formData.delete('amount');
 }
 
 function transElements() {
-  const transaction = JSON.parse(localStorage.getItem('transactions'));
-  const newRow = document.createElement('div');
-  newRow.classList.add('tr');
-  newRow.innerHTML = `
-  <div class="details">
-  <button class="btn-delete"><i class="bi bi-x"></i></button>
-    <h5>${transaction.transName}</h5>
-    <p>${transaction.transDate}</p>
-  </div>
-  <div class="amount ${
-    transaction.transAmount.match(/^-/g) ? 'danger' : 'success'
-  }">${transaction.transAmount}</div>
-  `;
+  try {
+    const transaction = JSON.parse(localStorage.getItem('transactions'));
 
-  table.appendChild(newRow);
-}
-
-function updateValues() {
-  const transaction = JSON.parse(localStorage.getItem('transactions'));
-  if (transaction.transAmount.match(/^-/g)) {
-    profile.expenses += Math.abs(+transaction.transAmount);
-    expenseDiv.innerText = profile.expenses;
-    profile.net = profile.income - profile.expenses;
-    netDiv.innerText = profile.net;
-  } else {
-    profile.income += +transaction.transAmount;
-    incomeDiv.innerText = profile.income;
-    profile.net = profile.income - profile.expenses;
-    netDiv.innerText = profile.net;
+    transaction.map((trans) => {
+      const { transName, transAmount, transDate } = trans;
+      updateLive(transName, transAmount, transDate);
+    });
+  } catch (e) {
+    // console.log(e.message);
   }
 }
 
-function deleteTrans(btn) {
-  let detailParent = btn.parentElement.parentElement;
-  let elemValue = detailParent.children[1];
+function updateLive(transName, transAmount, transDate) {
+  const newRow = document.createElement('div');
+  newRow.classList.add('tr');
+  newRow.innerHTML = `
+    <div class="details">
+    <button class="btn-delete"><i class="bi bi-x"></i></button>
+      <h5>${transName}</h5>
+      <p>${transDate}</p>
+    </div>
+    <div class="amount ${
+      transAmount.match(/^-/g) ? 'danger' : 'success'
+    }">${transAmount}</div>
+    `;
 
+  table.appendChild(newRow);
+  updateValues(transAmount);
+}
+
+function updateValues(transAmount) {
+  if (transAmount.match(/^-/g)) {
+    profile.expenses += Math.abs(+transAmount);
+    expenseDiv.innerText = profile.expenses;
+  } else {
+    profile.income += +transAmount;
+    incomeDiv.innerText = profile.income;
+  }
+  profile.net = profile.income - profile.expenses;
+  netDiv.innerText = profile.net;
+}
+
+function removeValues(elemValue) {
   if (elemValue.classList.contains('amount')) {
     if (elemValue.innerText.match(/^-/g)) {
       profile.expenses -= Math.abs(elemValue.innerText);
@@ -86,7 +96,19 @@ function deleteTrans(btn) {
       netDiv.innerText = profile.net;
     }
   }
+}
 
+function deleteTrans(btn) {
+  let detailParent = btn.parentElement.parentElement;
+  let elemValue = detailParent.children[1];
+  const index = Array.from(detailParent.parentElement.children).indexOf(
+    detailParent
+  );
+  const transaction = JSON.parse(localStorage.getItem('transactions'));
+  transaction.splice(index, 1);
+  localStorage.setItem('transactions', JSON.stringify(transaction));
+
+  removeValues(elemValue);
   detailParent.remove();
 }
 
@@ -99,8 +121,7 @@ transForm.addEventListener('submit', function (e) {
     errorP.innerText = 'All fields are required';
   } else {
     assignValues(formData);
-    transElements();
-    updateValues();
+    transForm.reset();
   }
 });
 
@@ -109,3 +130,5 @@ table.addEventListener('click', function (e) {
     deleteTrans(e.target);
   }
 });
+
+transElements();
