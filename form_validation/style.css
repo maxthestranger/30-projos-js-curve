@@ -54,7 +54,7 @@ input {
 }
 
 input:focus {
-  border-color: #2a61ff;
+  border-color: #00b7f0;
   outline: none;
   background: #f9fbff;
 }
@@ -75,7 +75,7 @@ h4 {
 
 button {
   color: white;
-  background: #2a61ff;
+  background: #00b7f0;
   padding: 23px 77px;
   border: none;
   width: 100%;
@@ -88,7 +88,7 @@ button {
 }
 
 button:hover {
-  background: #2759ec;
+  background: #0197c5;
 }
 
 .spanned {
@@ -108,10 +108,70 @@ button:hover {
   margin-top: 8px;
 }
 
+.successful {
+  color: #77d374;
+}
+
 .error {
   border-color: #ff8a8a;
 }
 
 .success {
   border-color: #8aff90;
+}
+
+label span {
+  color: rgb(250, 115, 91);
+}
+
+@media (max-width: 1440px) {
+  button {
+    font-size: 16px;
+  }
+  .card {
+    width: 35%;
+  }
+}
+
+@media (max-width: 1172px) {
+  .card {
+    width: 40%;
+  }
+}
+
+@media (max-width: 1026px) {
+  .card {
+    width: 50%;
+  }
+}
+
+@media (max-width: 830px) {
+  .card {
+    width: 70%;
+  }
+}
+
+@media (max-width: 594px) {
+  .card {
+    width: 80%;
+  }
+}
+
+@media (max-width: 516px) {
+  .card {
+    width: 100%;
+  }
+}
+
+.img-div {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.img {
+  width: 100px;
+  height: auto;
+  border: 1px solid #00b7f0;
+  border-radius: 50%;
 }

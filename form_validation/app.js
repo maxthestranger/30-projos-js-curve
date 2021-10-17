@@ -1,113 +1,114 @@
-class Validation {
-  constructor() {
-    this.inputElements = document.querySelectorAll('input');
-    this.errorMessage = document.createElement('p');
-    this.form = document.querySelector('.card');
-    this.mailRegex =
-      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    this.passwordRegex =
-      /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/;
-    this.currentPassword = null;
-    // this.currentUser = {};
-  }
+const formElem = document.querySelector('form');
+const allError = document.querySelector('#all_error');
+const errorMessage = document.createElement('p');
+const mailRegex =
+  /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+const passwordRegex =
+  /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/;
+let currentPassword = '';
+let isErrorFree = [];
 
-  //   Methods
+// functiions
+function assignErrors(message, input) {
+  errorMessage.innerText = message;
+  errorMessage.classList.add('message');
+  input.parentElement.appendChild(errorMessage);
+}
 
-  // Error Reporting
-  assignErrors(message, self) {
-    this.errorMessage.innerText = message;
-    this.errorMessage.classList.add('message');
-    self.parentElement.appendChild(this.errorMessage);
-  }
-
-  // validate username
-  validateUsername(self) {
-    if (self.name === 'username') {
-      if (self.value.match(/\s|\W/gi)) {
-        this.assignErrors('Only a-z0-9 and _ values allowed', self);
-      } else {
-        // this.currentUser.username = self.value;
-        this.errorMessage.innerText = '';
-        console.log(self.value);
-      }
-    }
-  }
-
-  // validate email
-  validateEmail(self) {
-    if (self.name === 'email') {
-      if (this.mailRegex.test(self.value)) {
-        this.errorMessage.innerText = '';
-        console.log(self.value);
-      } else {
-        this.assignErrors('Enter a valid email', self);
-      }
-    }
-  }
-
-  validatePassword(self) {
-    if (self.name === 'password') {
-      if (this.passwordRegex.test(self.value)) {
-        // this.currentUser.password = self.value;
-        this.errorMessage.innerText = '';
-        this.currentPassword = self.value;
-        console.log(self.value);
-      } else {
-        this.assignErrors(
-          'Passsword be 8 characters long, conatin at least one uppercase letter, symbol and number',
-          self
-        );
-      }
-    }
-  }
-
-  confirmPassword(self) {
-    if (self.name === 'confirm_password') {
-      if (self.value === this.currentPassword) {
-        // this.currentUser.confirmed_password = self.value;
-        this.errorMessage.innerText = '';
-        console.log(self.value);
-      } else {
-        this.assignErrors('Password must match', self);
-      }
-    }
-  }
-
-  checkEmpty(self) {
-    if (self.value === '') {
-      self.classList.add('error');
-    } else {
-      self.classList.remove('error');
-    }
-  }
-
-  validateInputs(self) {
-    //   Check if values are empty
-    this.checkEmpty(self);
-    // validate usernameerrorMessage
-    this.validateUsername(self);
-    // validate email
-    this.validateEmail(self);
-    // validate password
-    this.validatePassword(self);
-    // confirm password
-    this.confirmPassword(self);
+function validateUsername(username) {
+  if (username.value.match(/\s|\W/gi)) {
+    assignErrors(
+      'No spaces or special characters allowed (a-zA-Z, 0-9 and _ only',
+      username
+    );
+    isErrorFree[0] = false;
+  } else {
+    errorMessage.innerText = '';
+    isErrorFree[0] = true;
+    console.log(username.value);
   }
 }
 
-const validation = new Validation();
+function validateEmail(email) {
+  if (mailRegex.test(email.value)) {
+    errorMessage.innerText = '';
+    isErrorFree[1] = true;
+    console.log(email.value);
+  } else {
+    assignErrors('Enter a valid email address', email);
+    isErrorFree[1] = false;
+  }
+}
 
-// Events
-validation.form.addEventListener('submit', (e) => {
-  e.preventDefault();
+function validatePassword(password) {
+  if (passwordRegex.test(password.value)) {
+    errorMessage.innerText = '';
+    isErrorFree[2] = true;
+    currentPassword = password.value;
+  } else {
+    assignErrors(
+      'Password be 8 characters long, conatins at least one uppercase letter, symbol and a number',
+      password
+    );
+    isErrorFree[2] = false;
+  }
+}
 
-  validation.inputElements.forEach((input) => {
-    validation.validateInputs(input);
-  });
+function confirmPassword(password) {
+  if (password.value !== currentPassword) {
+    assignErrors('Password must match', password);
+    isErrorFree[3] = false;
+  } else {
+    errorMessage.innerText = '';
+    isErrorFree[3] = true;
+    console.log(currentPassword);
+  }
+}
+
+const formData = formElem.elements;
+
+// Listen to onChange for each input
+Array.from(formData).forEach((input) => {
+  if (input.tagName === 'INPUT') {
+    input.addEventListener('change', function (e) {
+      if (input.name === 'username') {
+        validateUsername(input);
+      }
+
+      if (input.name === 'email') {
+        validateEmail(input);
+      }
+
+      if (input.name === 'password') {
+        validatePassword(input);
+      }
+
+      if (input.name === 'confirm_password') {
+        confirmPassword(input);
+      }
+    });
+  }
 });
 
-validation.inputElements.forEach((input) => {
-  input.addEventListener('change', function () {
-    validation.validateInputs(this);
-  });
+// Listen to form submit
+
+formElem.addEventListener('submit', function (e) {
+  e.preventDefault();
+  if (
+    (formData['username'].value === '') |
+    (formData['email'].value === '') |
+    (formData['password'].value === '') |
+    (formData['confirm_password'].value === '')
+  ) {
+    allError.innerText = 'All fields with * are required';
+  } else {
+    allError.innerText = '';
+    if (isErrorFree.includes(false)) {
+      allError.innerText =
+        'Make sure that all fields are valid before submitting';
+    } else {
+      allError.classList.add('successful');
+      allError.innerText = 'Form validation successfull';
+    }
+  }
 });

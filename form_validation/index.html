@@ -11,26 +11,29 @@
     <div class="container">
       <form class="card">
         <div class="row">
-          <h4>Tell us about you</h4>
+          <div class="img-div">
+            <img src="./rocket.png" alt="logo" class="img" />
+          </div>
           <p class="info">
             Please tell a bit about you so that we can personalize your
             onboarding experience .
           </p>
+          <p class="message" id="all_error"></p>
         </div>
         <div class="row form-group">
-          <label for="username">Username</label>
+          <label for="username">Username <span>*</span></label>
           <input type="text" name="username" id="username" />
         </div>
         <div class="row form-group">
-          <label for="email">Email</label>
+          <label for="email">Email <span>*</span></label>
           <input type="email" name="email" id="email" />
         </div>
         <div class="row form-group">
-          <label for="password">Password</label>
+          <label for="password">Password <span>*</span></label>
           <input type="password" name="password" id="password" />
         </div>
         <div class="row form-group">
-          <label for="confirm_password">Confirm Password</label>
+          <label for="confirm_password">Confirm Password <span>*</span></label>
           <input
             type="password"
             name="confirm_password"
