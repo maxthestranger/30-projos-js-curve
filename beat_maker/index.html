@@ -15,12 +15,18 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
+    <div class="bigger_title">
+      <h1>MTS Beat Maker</h1>
+    </div>
     <div class="sequencer">
       <div class="kick-track">
         <div class="controls">
-          <h1>Kick</h1>
+          <div class="icon d-flex justify-center align-center flex-column">
+            <i class="fa-solid fa-drum"></i>
+            <p class="mt-2">Kick</p>
+          </div>
           <button data-track="0" class="mute kick-volume">
-            <i class="fas fa-volume-mute"></i> Mute
+            <i class="fas fa-volume-high"></i>
           </button>
           <select name="kick-select" id="kick-select">
             <option value="./sounds/kick-classic.wav">Classic Kick</option>
@@ -38,14 +44,25 @@
           <div class="pad kick-pad b5"></div>
           <div class="pad kick-pad b6"></div>
           <div class="pad kick-pad b7"></div>
+          <div class="pad kick-pad b8"></div>
+          <div class="pad kick-pad b9"></div>
+          <div class="pad kick-pad b10"></div>
+          <div class="pad kick-pad b11"></div>
+          <div class="pad kick-pad b12"></div>
+          <div class="pad kick-pad b13"></div>
+          <div class="pad kick-pad b14"></div>
+          <div class="pad kick-pad b15"></div>
         </div>
       </div>
 
       <div class="snare-track">
         <div class="controls">
-          <h1>Snare</h1>
+          <div class="icon d-flex justify-center align-center flex-column">
+            <i class="fa-solid fa-drum-steelpan"></i>
+            <p class="mt-2">Snare</p>
+          </div>
           <button data-track="1" class="mute snare-volume">
-            <i class="fas fa-volume-mute"></i> Mute
+            <i class="fas fa-volume-high"></i>
           </button>
           <select name="snare-select" id="snare-select">
             <option value="./sounds/snare-vinyl.wav">Vinyl Snare</option>
@@ -63,19 +80,32 @@
           <div class="pad snare-pad b5"></div>
           <div class="pad snare-pad b6"></div>
           <div class="pad snare-pad b7"></div>
+          <div class="pad snare-pad b8"></div>
+          <div class="pad snare-pad b9"></div>
+          <div class="pad snare-pad b10"></div>
+          <div class="pad snare-pad b11"></div>
+          <div class="pad snare-pad b12"></div>
+          <div class="pad snare-pad b13"></div>
+          <div class="pad snare-pad b14"></div>
+          <div class="pad snare-pad b15"></div>
         </div>
       </div>
 
       <div class="hihat-track">
         <div class="controls">
-          <h1>Hihat</h1>
+          <div class="icon d-flex justify-center align-center flex-column">
+            <i class="fa-solid fa-record-vinyl"></i>
+            <p class="mt-2">Shaker</p>
+          </div>
           <button data-track="2" class="mute hihat-volume">
-            <i class="fas fa-volume-mute"></i> Mute
+            <i class="fas fa-volume-high"></i>
           </button>
           <select name="hihat-select" id="hihat-select">
-            <option value="./sounds/shaker-808.wav">808 Hihat</option>
-            <option value="./sounds/shaker-heavy.wav">Heavy Hihat</option>
-            <option value="./sounds/shaker-acoustic.wav">Acoustic Hihat</option>
+            <option value="./sounds/shaker-808.wav">808 Shaker</option>
+            <option value="./sounds/shaker-heavy.wav">Heavy Shaker</option>
+            <option value="./sounds/shaker-acoustic.wav">
+              Acoustic Shaker
+            </option>
           </select>
         </div>
 
@@ -88,18 +118,31 @@
           <div class="pad hihat-pad b5"></div>
           <div class="pad hihat-pad b6"></div>
           <div class="pad hihat-pad b7"></div>
+          <div class="pad hihat-pad b8"></div>
+          <div class="pad hihat-pad b9"></div>
+          <div class="pad hihat-pad b10"></div>
+          <div class="pad hihat-pad b11"></div>
+          <div class="pad hihat-pad b12"></div>
+          <div class="pad hihat-pad b13"></div>
+          <div class="pad hihat-pad b14"></div>
+          <div class="pad hihat-pad b15"></div>
         </div>
       </div>
-      <button class="play">Play</button>
+      <button class="play">
+        <i class="fa-solid fa-play"></i>
+      </button>
       <div class="tempo">
         <input
           type="range"
           class="tempo-slider"
           max="300"
           min="20"
-          value="150"
+          value="120"
         />
-        <p>Tempo: <span class="tempo-nr">150</span></p>
+        <p class="tempo_more">
+          <img src="./metronome.png" class="me-2" alt="tempo" />
+          <span class="tempo-nr">120</span>
+        </p>
       </div>
     </div>
 

@@ -9,7 +9,7 @@ class DrumKit {
     this.snareAudio = document.querySelector('.snare-sound');
     this.hihatAudio = document.querySelector('.hihat-sound');
     this.index = 0;
-    this.bpm = 150;
+    this.bpm = 120;
     this.isPlaying = null;
     this.selects = document.querySelectorAll('select');
     this.muteBtns = document.querySelectorAll('.mute');
@@ -21,11 +21,11 @@ class DrumKit {
   }
 
   repeat() {
-    let step = this.index % 8;
+    let step = this.index % 16;
     const activeBars = document.querySelectorAll(`.b${step}`);
     // loop over the pads
     activeBars.forEach((bar) => {
-      bar.style.animation = 'playTrack 0.3s alternate ease-in-out 2';
+      bar.style.animation = 'playTrack 0.2s alternate ease-in-out 2';
       //   check if pad is active
       if (bar.classList.contains('active')) {
         // check each soudn
@@ -49,7 +49,7 @@ class DrumKit {
   }
 
   start() {
-    const interval = (60 / this.bpm) * 1000;
+    const interval = (120 / this.bpm) * 125;
     // check if its playing
     if (this.isPlaying) {
       // clear interval
@@ -64,11 +64,13 @@ class DrumKit {
 
   updateBtn() {
     if (this.isPlaying) {
-      this.playBtn.innerText = 'Play';
+      this.playBtn.innerHTML = `<i class="fa-solid fa-play"></i>`;
       this.playBtn.classList.remove('active');
+      this.playBtn.style.color = '#699e64';
     } else {
-      this.playBtn.innerText = 'Stop';
+      this.playBtn.innerHTML = `<i class="fa-solid fa-stop"></i>`;
       this.playBtn.classList.add('active');
+      this.playBtn.style.color = '#f614c6';
     }
   }
 
@@ -92,6 +94,11 @@ class DrumKit {
   mute(e) {
     const muteIndex = e.target.getAttribute('data-track');
     e.target.classList.toggle('active');
+    if (e.target.classList.contains('active')) {
+      e.target.innerHTML = `<i class="fa-solid fa-volume-xmark"></i>`;
+    } else {
+      e.target.innerHTML = `<i class="fa-solid fa-volume-high"></i>`;
+    }
     if (e.target.classList.contains('active')) {
       switch (muteIndex) {
         case '0':

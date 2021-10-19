@@ -6,6 +6,8 @@
 
 body {
   font-family: sans-serif;
+  background: #0e1025;
+  color: #bebec4;
 }
 i,
 svg {
@@ -15,28 +17,36 @@ svg {
 .kick-pad,
 .snare-pad,
 .hihat-pad {
-  width: 5rem;
-  height: 5rem;
+  width: 4.2rem;
+  height: 4.2rem;
   margin: 1rem 0.5rem;
   cursor: pointer;
+  background: #26283b;
 }
-.kick-pad {
-  background: rgb(160, 211, 224);
-}
-.snare-pad {
-  background: rgb(224, 160, 208);
-}
-.hihat-pad {
-  background: rgb(224, 194, 160);
-}
+
 .kick-pad.active {
-  background: rgb(59, 197, 231);
+  background: rgb(113, 223, 243);
+  background: radial-gradient(
+    circle,
+    rgba(113, 223, 243, 1) 4%,
+    rgba(51, 107, 239, 1) 71%
+  );
 }
 .snare-pad.active {
-  background: rgb(218, 58, 178);
+  background: rgb(205, 94, 221);
+  background: radial-gradient(
+    circle,
+    rgba(205, 94, 221, 1) 4%,
+    rgba(126, 63, 215, 1) 71%
+  );
 }
 .hihat-pad.active {
-  background: rgb(241, 158, 64);
+  background: rgb(229, 243, 114);
+  background: radial-gradient(
+    circle,
+    rgba(229, 243, 114, 1) 4%,
+    rgba(244, 179, 58, 1) 71%
+  );
 }
 
 .sequencer {
@@ -45,6 +55,7 @@ svg {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  width: 100%;
 }
 
 .hihat-track,
@@ -52,14 +63,15 @@ svg {
 .kick-track {
   display: flex;
   align-items: center;
-  width: 70%;
-  justify-content: space-between;
-  margin-top: 5rem;
+  width: 100%;
+  justify-content: center;
+  margin-top: 3rem;
 }
 .kick,
 .snare,
 .hihat {
   display: flex;
+  max-width: 80%;
 }
 .controls {
   display: flex;
@@ -67,6 +79,7 @@ svg {
   align-items: center;
   flex: 1;
   margin: 0rem 2rem;
+  max-width: 20%;
 }
 .controls button {
   padding: 1rem;
@@ -80,21 +93,54 @@ svg {
 
 .pad {
   transition: all 0.5s ease;
+  border-radius: 8px;
 }
 
 .play {
   padding: 1rem 2rem;
   font-size: 1.5rem;
-  background: rgb(88, 88, 88);
-  color: white;
-  border: none;
+  color: #bebec4;
   cursor: pointer;
   margin-top: 3rem;
+  border-radius: 8px !important;
+  background: #26283b !important;
+  border: 1px solid #32354e !important;
+  transition: all 0.3s ease-in-out;
+}
+
+.play:hover {
+  background: #1a1c29 !important;
+}
+
+.play:focus {
+  outline: none;
 }
 
 select {
   padding: 1rem;
   font-size: 1rem;
+  border-radius: 8px;
+  background-color: #26283b !important;
+  background-position-x: left;
+  border: 1px solid #32354e !important;
+  color: #bebec4;
+  cursor: pointer;
+}
+
+select:focus {
+  outline: none;
+  border: none;
+  box-shadow: none;
+}
+
+.mute {
+  border-radius: 8px !important;
+  background: #26283b !important;
+  border: 1px solid #32354e !important;
+}
+
+.mute:hover {
+  background: #1a1c29 !important;
 }
 
 .mute.active {
@@ -104,6 +150,10 @@ select {
 .tempo {
   margin: 3rem;
   width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 .tempo-slider {
   padding: 0.2rem;
@@ -111,9 +161,11 @@ select {
   margin: 1rem 0rem;
   width: 100%;
   position: relative;
-  background: rgb(88, 88, 88);
+  border-radius: 8px !important;
+  background: #26283b !important;
+  border: 1px solid #32354e !important;
   cursor: pointer;
-  border-radius: 1rem;
+  /* border-radius: 1rem; */
 }
 .tempo p {
   font-size: 1.5rem;
@@ -128,4 +180,80 @@ select {
   to {
     transform: scale(1.2);
   }
+}
+
+.d-flex {
+  display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.justify-center {
+  justify-content: center;
+}
+.align-center {
+  align-items: center;
+}
+
+.mt-2 {
+  margin-top: 10px;
+}
+
+.icon {
+  border-radius: 8px;
+  border: 1px solid #bebec4;
+  padding: 10px;
+}
+
+.icon i {
+  font-size: 25px;
+}
+
+.icon p {
+  font-size: 12px;
+}
+
+.b0,
+.b1,
+.b2,
+.b3,
+.b8,
+.b9,
+.b10,
+.b11 {
+  background: #343752;
+}
+
+.tempo_more {
+  border-radius: 8px !important;
+  background: #26283b !important;
+  border: 1px solid #32354e !important;
+  width: 25%;
+  padding: 1rem 0.2rem;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.me-2 {
+  margin-right: 5px;
+  width: 30px;
+  height: auto;
+}
+
+@media (max-width: 1700px) {
+  .controls {
+    flex-direction: column;
+  }
+  .controls > * {
+    margin-bottom: 15px;
+  }
+}
+
+.bigger_title {
+  text-align: center;
+  margin-top: 2rem;
 }
