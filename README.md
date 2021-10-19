@@ -15,11 +15,6 @@
     <td>2</td>
     <td><a href="https://github.com/maxthestranger/30-projos-js-curve/tree/main/todo">Todo</a></td>
     <td style="text-align: center"><a href="https://code.maxthestranger.com/projects/js/todo">View</a></td>
-  </tr> 
-  <tr>
-    <td>3</td>
-    <td><a href="https://github.com/maxthestranger/30-projos-js-curve/tree/main/beat_maker">Beat Maker</a></td>
-    <td style="text-align: center"><a href="https://code.maxthestranger.com/projects/js/beat_maker">View</a></td>
   </tr>  
   <tr>
     <td>3</td>
@@ -29,6 +24,11 @@
   <tr>
     <td>4</td>
     <td><a href="https://github.com/maxthestranger/30-projos-js-curve/tree/main/form_validation">Budget Tracker</a></td>
+    <td style="text-align: center"><a href="https://bit.ly/3AMhNQB">View</a></td>
+  </tr> 
+  <tr>
+    <td>5</td>
+    <td><a href="https://github.com/maxthestranger/30-projos-js-curve/tree/main/form_validation">Beat Maker</a></td>
     <td style="text-align: center"><a href="https://bit.ly/3AMhNQB">View</a></td>
   </tr> 
 </table>
