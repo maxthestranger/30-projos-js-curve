@@ -17,21 +17,36 @@ let results = '';
 function takeValues(val) {
   if (/[0-9]/.test(val)) {
     operand += val;
-    calcScreen.innerText = operation.join(' ');
+    if (operation.length === 0) {
+      calcScreen.innerText = operand;
+    } else {
+      if (operator.includes(calcScreen.innerText.slice(-1))) {
+        calcScreen.innerText = calcScreen.innerText + ' ' + val;
+      } else {
+        calcScreen.innerText += val;
+      }
+    }
   }
 
   if (operator.includes(val)) {
     if (operand.length !== 0) {
       operation.push(operand);
       operand = '';
-    }
-    if (operator.includes(operation.at(-1))) {
-      operation.splice(-1, 1, val);
-    } else {
-      operation.push(val);
-    }
+      calcScreen.innerText = operation.join(' ');
 
-    calcScreen.innerText = operation.join(' ');
+      if (operator.includes(operation.at(-1))) {
+        operation.splice(-1, 1, val);
+        calcScreen.innerText = operation.join(' ');
+      } else {
+        operation.push(val);
+        calcScreen.innerText = operation.join(' ');
+      }
+    } else {
+      if (val === '-') {
+        operand += val;
+        calcScreen.innerText = operand;
+      }
+    }
   }
 
   if (val === '=') {
@@ -44,7 +59,7 @@ function takeValues(val) {
     } else {
       results = eval(operation.join(''));
       calcScreen.innerText = operation.join(' ');
-      resultScreen.innerText = results;
+      resultScreen.innerText = Number(results).toFixed(2);
       operand = '';
       results = '';
       operation = [];
@@ -57,5 +72,14 @@ function takeValues(val) {
     results = '';
     calcScreen.innerText = '0';
     resultScreen.innerText = results;
+  }
+
+  if (val === '.') {
+    if (operand.length !== 0) {
+      if (!operand.includes(val)) {
+        operand += val;
+        calcScreen.innerText = operand;
+      }
+    }
   }
 }
