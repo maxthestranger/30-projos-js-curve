@@ -12,75 +12,78 @@
       <div id="calculator">
         <div class="screen-container">
           <div class="result">
-            <div class="number">2,458</div>
+            <div class="number"></div>
           </div>
           <div class="calculation">
-            <div class="number">2458 x 1</div>
+            <div class="number">0</div>
           </div>
         </div>
         <div class="btn-container">
           <div class="oper-container">
-            <div class="btn" id="clear">
+            <div class="btn" id="clear" onclick="takeValues('AC')">
               <div class="number">AC</div>
             </div>
-            <div class="btn operations divide">
+            <div class="btn operations divide" onclick="takeValues('/')">
               <div class="number">÷</div>
             </div>
-            <div class="btn operations multiplication">
+            <div
+              class="btn operations multiplication"
+              onclick="takeValues('*')"
+            >
               <div class="number">×</div>
             </div>
-            <div class="btn operations plus">
+            <div class="btn operations plus" onclick="takeValues('+')">
               <div class="number">+</div>
             </div>
-            <div class="btn operations less">
+            <div class="btn operations less" onclick="takeValues('-')">
               <div class="number">-</div>
             </div>
           </div>
 
           <div class="row">
-            <div class="btn">
+            <div class="btn" onclick="takeValues('7')">
               <div class="number">7</div>
             </div>
-            <div class="btn">
+            <div class="btn" onclick="takeValues('8')">
               <div class="number">8</div>
             </div>
-            <div class="btn">
+            <div class="btn" onclick="takeValues('9')">
               <div class="number">9</div>
             </div>
           </div>
           <div class="row">
-            <div class="btn">
+            <div class="btn" onclick="takeValues('4')">
               <div class="number">4</div>
             </div>
-            <div class="btn">
+            <div class="btn" onclick="takeValues('5')">
               <div class="number">5</div>
             </div>
-            <div class="btn">
+            <div class="btn" onclick="takeValues('6')">
               <div class="number">6</div>
             </div>
           </div>
           <div class="row">
-            <div class="btn">
+            <div class="btn" onclick="takeValues('1')">
               <div class="number">1</div>
             </div>
-            <div class="btn">
+            <div class="btn" onclick="takeValues('2')">
               <div class="number">2</div>
             </div>
-            <div class="btn">
+            <div class="btn" onclick="takeValues('3')">
               <div class="number">3</div>
             </div>
           </div>
           <div class="row">
-            <div class="btn" id="dot">
+            <div class="btn" id="dot" onclick="takeValues('.')">
               <div class="number">.</div>
             </div>
-            <div class="btn">
+            <div class="btn" onclick="takeValues('0')">
               <div class="number">0</div>
             </div>
             <div class="btn">
               <div class="number"></div>
             </div>
-            <div class="btn" id="result">
+            <div class="btn" id="result" onclick="takeValues('=')">
               <div class="number">=</div>
             </div>
           </div>
