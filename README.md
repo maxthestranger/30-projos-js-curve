@@ -36,4 +36,9 @@
     <td><a href="https://github.com/maxthestranger/30-projos-js-curve/tree/main/calculator">Calculator</a></td>
     <td style="text-align: center"><a href="https://bit.ly/3AMhNQB">View</a></td>
   </tr> 
+  <tr>
+    <td>7</td>
+    <td><a href="https://github.com/maxthestranger/30-projos-js-curve/tree/main/bus_seat_booking">Bus Seat Booking</a></td>
+    <td style="text-align: center"><a href="https://bit.ly/3AMhNQB">View</a></td>
+  </tr> 
 </table>
