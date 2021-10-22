@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bus Seat Booking</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="page-wrapper">
+      <header class="bg-blue py-5">
+        <div class="container flex">
+          <div class="logo">
+            <a href="#" class="logo_image"
+              ><img src="moder_coast.png" alt="Modern Logo"
+            /></a>
+          </div>
+          <nav class="nav">
+            <ul>
+              <li>
+                <a href="#/" class="menu_link"
+                  ><img src="bus.svg" alt="Book Bus" /><span>Book Bus</span></a
+                >
+              </li>
+              <li>
+                <a href="#/" class="menu_link"
+                  ><img src="parcel.svg" alt="Book Bus" /><span
+                    >Careers</span
+                  ></a
+                >
+              </li>
+              <li>
+                <a href="#/" class="menu_link"
+                  ><img src="parcel.svg" alt="Book Bus" /><span
+                    >About Us</span
+                  ></a
+                >
+              </li>
+              <li>
+                <a href="#/" class="menu_link"
+                  ><img src="phone.svg" alt="Book Bus" /><span
+                    >Contact Us</span
+                  ></a
+                >
+              </li>
+            </ul>
+
+            <ul class="flex">
+              <li>
+                <a href="#" class="menu_link"><span>Services</span></a>
+              </li>
+              <li>
+                <a href="#" class="menu_link"><span>Login</span></a>
+              </li>
+              <!---->
+            </ul>
+          </nav>
+        </div>
+      </header>
+      <section>
+        <div class="seat_labels">
+          <div class="container">
+            <div class="flex align_center">
+              <img src="business.svg" alt="seat" />
+              <span>Business</span>
+            </div>
+            <div class="flex align_center">
+              <img src="first_class.svg" alt="seat" />
+              <span>First Class</span>
+            </div>
+            <div class="flex align_center">
+              <img src="vip.svg" alt="seat" />
+              <span>VIP</span>
+            </div>
+            <div class="flex align_center">
+              <img src="selected.svg" alt="seat" />
+              <span>Selected</span>
+            </div>
+            <div class="flex align_center">
+              <img src="booked.svg" alt="seat" />
+              <span>Booked</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="container pos_rel p_1">
+          <!-- TODO: Loader Here -->
+
+          <div class="title_wrapper">
+            <span
+              ><img src="bus_blue.svg" alt="Book Bus" />
+              <h3>Select your seats</h3></span
+            >
+          </div>
+
+          <div class="row seat_layout pos-rel pt_1">
+            <div class="bus_seat_wrapper">
+              <div class="grid">
+                <div class="grid_item">
+                  <div class="seat_item business">
+                    <input
+                      type="checkbox"
+                      id="seat_5_1"
+                      class="seat_checkbox"
+                      disabled="disabled"
+                    /><label for="seat_5_1" title="Dr | Business | 1000"
+                      ><span class="seat_text">Dr</span
+                      ><span class="armrest_right arm"></span
+                      ><span class="armrest_left arm"></span
+                      ><span class="backrest"></span
+                    ></label>
+                  </div>
+                </div>
+                <div class="grid_item">
+                  <div class="seat_item first_class">
+                    <input
+                      type="checkbox"
+                      id="seat_5_2"
+                      class="seat_checkbox"
+                    /><label for="seat_5_2" title="6 | First Class | 1500"
+                      ><span class="seat_text">6</span
+                      ><span class="armrest_right arm"></span
+                      ><span class="armrest_left arm"></span
+                      ><span class="backrest"></span
+                    ></label>
+                  </div>
+                </div>
+                <div class="grid_item">
+                  <div class="seat_item first_class">
+                    <input
+                      type="checkbox"
+                      id="seat_5_3"
+                      class="seat_checkbox"
+                    /><label for="seat_5_3" title="10 | First Class | 1500"
+                      ><span class="seat_text">10</span
+                      ><span class="armrest_right arm"></span
+                      ><span class="armrest_left arm"></span
+                      ><span class="backrest"></span
+                    ></label>
+                  </div>
+                </div>
+                <div class="grid_item">
+                  <div class="seat_item business">
+                    <input
+                      type="checkbox"
+                      id="seat_5_4"
+                      class="seat_checkbox"
+                    /><label for="seat_5_4" title="12 | Business | 1000"
+                      ><span class="seat_text">12</span
+                      ><span class="armrest_right arm"></span
+                      ><span class="armrest_left arm"></span
+                      ><span class="backrest"></span
+                    ></label>
+                  </div>
+                </div>
+                <div class="grid_item">
+                  <div class="seat_item business">
+                    <input
+                      type="checkbox"
+                      id="seat_5_5"
+                      class="seat_checkbox"
+                    /><label for="seat_5_5" title="16 | Business | 1000"
+                      ><span class="seat_text">16</span
+                      ><span class="armrest_right arm"></span
+                      ><span class="armrest_left arm"></span
+                      ><span class="backrest"></span
+                    ></label>
+                  </div>
+                </div>
+                <div class="grid_item">
+                  <div class="seat_item business">
+                    <input
+                      type="checkbox"
+                      id="seat_5_6"
+                      class="seat_checkbox"
+                    /><label for="seat_5_6" title="20 | Business | 1000"
+                      ><span class="seat_text">20</span
+                      ><span class="armrest_right arm"></span
+                      ><span class="armrest_left arm"></span
+                      ><span class="backrest"></span
+                    ></label>
+                  </div>
+                </div>
+                <div class="grid_item">
+                  <div class="seat_item business">
+                    <input
+                      type="checkbox"
+                      id="seat_5_7"
+                      class="seat_checkbox"
+                    /><label for="seat_5_7" title="24 | Business | 1000"
+                      ><span class="seat_text">24</span
+                      ><span class="armrest_right arm"></span
+                      ><span class="armrest_left arm"></span
+                      ><span class="backrest"></span
+                    ></label>
+                  </div>
+                </div>
+                <div class="grid_item">
+                  <div class="seat_item business">
+                    <input
+                      type="checkbox"
+                      id="seat_5_8"
+                      class="seat_checkbox"
+                    /><label for="seat_5_8" title="28 | Business | 1000"
+                      ><span class="seat_text">28</span
+                      ><span class="armrest_right arm"></span
+                      ><span class="armrest_left arm"></span
+                      ><span class="backrest"></span
+                    ></label>
+                  </div>
+                </div>
+                <div class="grid_item">
+                  <div class="seat_item business">
+                    <input
+                      type="checkbox"
+                      id="seat_5_9"
+                      class="seat_checkbox"
+                    /><label for="seat_5_9" title="32 | Business | 1000"
+                      ><span class="seat_text">32</span
+                      ><span class="armrest_right arm"></span
+                      ><span class="armrest_left arm"></span
+                      ><span class="backrest"></span
+                    ></label>
+                  </div>
+                </div>
+                <div class="grid_item">
+                  <div class="seat_item business">
+                    <input
+                      type="checkbox"
+                      id="seat_5_10"
+                      class="seat_checkbox"
+                    /><label for="seat_5_10" title="36 | Business | 1000"
+                      ><span class="seat_text">36</span
+                      ><span class="armrest_right arm"></span
+                      ><span class="armrest_left arm"></span
+                      ><span class="backrest"></span
+                    ></label>
+                  </div>
+                </div>
+                <div class="grid_item">
+                  <div class="seat_item business">
+                    <input
+                      type="checkbox"
+                      id="seat_5_11"
+                      class="seat_checkbox"
+                    /><label for="seat_5_11" title="41 | Business | 1000"
+                      ><span class="seat_text">41</span
+                      ><span class="armrest_right arm"></span
+                      ><span class="armrest_left arm"></span
+                      ><span class="backrest"></span
+                    ></label>
+                  </div>
+                </div>
+                <div class="grid_item"></div>
+                <div class="grid_item">
+                  <div class="seat_item first_class">
+                    <input
+                      type="checkbox"
+                      id="seat_4_2"
+                      class="seat_checkbox"
+                    /><label for="seat_4_2" title="5 | First Class | 1500"
+                      ><span class="seat_text">5</span
+                      ><span class="armrest_right arm"></span
+                      ><span class="armrest_left arm"></span
+                      ><span class="backrest"></span
+                    ></label>
+                  </div>
+                </div>
+                <div class="grid_item">
+                  <div class="seat_item first_class">
+                    <input
+                      type="checkbox"
+                      id="seat_4_3"
+                      class="seat_checkbox"
+                    /><label for="seat_4_3" title="9 | First Class | 1500"
+                      ><span class="seat_text">9</span
+                      ><span class="armrest_right arm"></span
+                      ><span class="armrest_left arm"></span
+                      ><span class="backrest"></span
+                    ></label>
+                  </div>
+                </div>
+                <div class="grid_item">
+                  <div class="seat_item business">
+                    <input
+                      type="checkbox"
+                      id="seat_4_4"
+                      class="seat_checkbox"
+                    /><label for="seat_4_4" title="11 | Business | 1000"
+                      ><span class="seat_text">11</span
+                      ><span class="armrest_right arm"></span
+                      ><span class="armrest_left arm"></span
+                      ><span class="backrest"></span
+                    ></label>
+                  </div>
+                </div>
+                <div class="grid_item">
+                  <div class="seat_item business">
+                    <input
+                      type="checkbox"
+                      id="seat_4_5"
+                      class="seat_checkbox"
+                    /><label for="seat_4_5" title="15 | Business | 1000"
+                      ><span class="seat_text">15</span
+                      ><span class="armrest_right arm"></span
+                      ><span class="armrest_left arm"></span
+                      ><span class="backrest"></span
+                    ></label>
+                  </div>
+                </div>
+                <div class="grid_item">
+                  <div class="seat_item business">
+                    <input
+                      type="checkbox"
+                      id="seat_4_6"
+                      class="seat_checkbox"
+                    /><label for="seat_4_6" title="19 | Business | 1000"
+                      ><span class="seat_text">19</span
+                      ><span class="armrest_right arm"></span
+                      ><span class="armrest_left arm"></span
+                      ><span class="backrest"></span
+                    ></label>
+                  </div>
+                </div>
+                <div class="grid_item">
+                  <div class="seat_item business">
+                    <input
+                      type="checkbox"
+                      id="seat_4_7"
+                      class="seat_checkbox"
+                    /><label for="seat_4_7" title="23 | Business | 1000"
+                      ><span class="seat_text">23</span
+                      ><span class="armrest_right arm"></span
+                      ><span class="armrest_left arm"></span
+                      ><span class="backrest"></span
+                    ></label>
+                  </div>
+                </div>
+                <div class="grid_item">
+                  <div class="seat_item business">
+                    <input
+                      type="checkbox"
+                      id="seat_4_8"
+                      class="seat_checkbox"
+                    /><label for="seat_4_8" title="27 | Business | 1000"
+                      ><span class="seat_text">27</span
+                      ><span class="armrest_right arm"></span
+                      ><span class="armrest_left arm"></span
+                      ><span class="backrest"></span
+                    ></label>
+                  </div>
+                </div>
+                <div class="grid_item">
+                  <div class="seat_item business">
+                    <input
+                      type="checkbox"
+                      id="seat_4_9"
+                      class="seat_checkbox"
+                    /><label for="seat_4_9" title="31 | Business | 1000"
+                      ><span class="seat_text">31</span
+                      ><span class="armrest_right arm"></span
+                      ><span class="armrest_left arm"></span
+                      ><span class="backrest"></span
+                    ></label>
+                  </div>
+                </div>
+                <div class="grid_item">
+                  <div class="seat_item business">
+                    <input
+                      type="checkbox"
+                      id="seat_4_10"
+                      class="seat_checkbox"
+                    /><label for="seat_4_10" title="35 | Business | 1000"
+                      ><span class="seat_text">35</span
+                      ><span class="armrest_right arm"></span
+                      ><span class="armrest_left arm"></span
+                      ><span class="backrest"></span
+                    ></label>
+                  </div>
+                </div>
+                <div class="grid_item">
+                  <div class="seat_item business">
+                    <input
+                      type="checkbox"
+                      id="seat_4_11"
+                      class="seat_checkbox"
+                    /><label for="seat_4_11" title="40 | Business | 1000"
+                      ><span class="seat_text">40</span
+                      ><span class="armrest_right arm"></span
+                      ><span class="armrest_left arm"></span
+                      ><span class="backrest"></span
+                    ></label>
+                  </div>
+                </div>
+                <div class="grid_item"></div>
+                <div class="grid_item"></div>
+                <div class="grid_item"></div>
+                <div class="grid_item"></div>
+                <div class="grid_item"></div>
+                <div class="grid_item"></div>
+                <div class="grid_item"></div>
+                <div class="grid_item"></div>
+                <div class="grid_item"></div>
+                <div class="grid_item"></div>
+                <div class="grid_item">
+                  <div class="seat_item business">
+                    <input
+                      type="checkbox"
+                      id="seat_3_11"
+                      class="seat_checkbox"
+                    /><label for="seat_3_11" title="39 | Business | 1000"
+                      ><span class="seat_text">39</span
+                      ><span class="armrest_right arm"></span
+                      ><span class="armrest_left arm"></span
+                      ><span class="backrest"></span
+                    ></label>
+                  </div>
+                </div>
+                <div class="grid_item">
+                  <div class="seat_item vip">
+                    <input
+                      type="checkbox"
+                      id="seat_2_1"
+                      class="seat_checkbox"
+                    /><label for="seat_2_1" title="2 | Vip | 2000"
+                      ><span class="seat_text">2</span
+                      ><span class="armrest_right arm"></span
+                      ><span class="armrest_left arm"></span
+                      ><span class="backrest"></span
+                    ></label>
+                  </div>
+                </div>
+                <div class="grid_item">
+                  <div class="seat_item first_class">
+                    <input
+                      type="checkbox"
+                      id="seat_2_2"
+                      class="seat_checkbox"
+                    /><label for="seat_2_2" title="4 | First Class | 1500"
+                      ><span class="seat_text">4</span
+                      ><span class="armrest_right arm"></span
+                      ><span class="armrest_left arm"></span
+                      ><span class="backrest"></span
+                    ></label>
+                  </div>
+                </div>
+                <div class="grid_item">
+                  <div class="seat_item first_class">
+                    <input
+                      type="checkbox"
+                      id="seat_2_3"
+                      class="seat_checkbox"
+                    /><label for="seat_2_3" title="8 | First Class | 1500"
+                      ><span class="seat_text">8</span
+                      ><span class="armrest_right arm"></span
+                      ><span class="armrest_left arm"></span
+                      ><span class="backrest"></span
+                    ></label>
+                  </div>
+                </div>
+                <div class="grid_item"></div>
+                <div class="grid_item">
+                  <div class="seat_item business">
+                    <input
+                      type="checkbox"
+                      id="seat_2_5"
+                      class="seat_checkbox"
+                    /><label for="seat_2_5" title="14 | Business | 1000"
+                      ><span class="seat_text">14</span
+                      ><span class="armrest_right arm"></span
+                      ><span class="armrest_left arm"></span
+                      ><span class="backrest"></span
+                    ></label>
+                  </div>
+                </div>
+                <div class="grid_item">
+                  <div class="seat_item business">
+                    <input
+                      type="checkbox"
+                      id="seat_2_6"
+                      class="seat_checkbox"
+                    /><label for="seat_2_6" title="18 | Business | 1000"
+                      ><span class="seat_text">18</span
+                      ><span class="armrest_right arm"></span
+                      ><span class="armrest_left arm"></span
+                      ><span class="backrest"></span
+                    ></label>
+                  </div>
+                </div>
+                <div class="grid_item">
+                  <div class="seat_item business">
+                    <input
+                      type="checkbox"
+                      id="seat_2_7"
+                      class="seat_checkbox"
+                    /><label for="seat_2_7" title="22 | Business | 1000"
+                      ><span class="seat_text">22</span
+                      ><span class="armrest_right arm"></span
+                      ><span class="armrest_left arm"></span
+                      ><span class="backrest"></span
+                    ></label>
+                  </div>
+                </div>
+                <div class="grid_item">
+                  <div class="seat_item business">
+                    <input
+                      type="checkbox"
+                      id="seat_2_8"
+                      class="seat_checkbox"
+                    /><label for="seat_2_8" title="26 | Business | 1000"
+                      ><span class="seat_text">26</span
+                      ><span class="armrest_right arm"></span
+                      ><span class="armrest_left arm"></span
+                      ><span class="backrest"></span
+                    ></label>
+                  </div>
+                </div>
+                <div class="grid_item">
+                  <div class="seat_item business">
+                    <input
+                      type="checkbox"
+                      id="seat_2_9"
+                      class="seat_checkbox"
+                    /><label for="seat_2_9" title="30 | Business | 1000"
+                      ><span class="seat_text">30</span
+                      ><span class="armrest_right arm"></span
+                      ><span class="armrest_left arm"></span
+                      ><span class="backrest"></span
+                    ></label>
+                  </div>
+                </div>
+                <div class="grid_item">
+                  <div class="seat_item business">
+                    <input
+                      type="checkbox"
+                      id="seat_2_10"
+                      class="seat_checkbox"
+                    /><label for="seat_2_10" title="34 | Business | 1000"
+                      ><span class="seat_text">34</span
+                      ><span class="armrest_right arm"></span
+                      ><span class="armrest_left arm"></span
+                      ><span class="backrest"></span
+                    ></label>
+                  </div>
+                </div>
+                <div class="grid_item">
+                  <div class="seat_item business">
+                    <input
+                      type="checkbox"
+                      id="seat_2_11"
+                      class="seat_checkbox"
+                    /><label for="seat_2_11" title="38 | Business | 1000"
+                      ><span class="seat_text">38</span
+                      ><span class="armrest_right arm"></span
+                      ><span class="armrest_left arm"></span
+                      ><span class="backrest"></span
+                    ></label>
+                  </div>
+                </div>
+                <div class="grid_item">
+                  <div class="seat_item vip">
+                    <input
+                      type="checkbox"
+                      id="seat_1_1"
+                      class="seat_checkbox"
+                    /><label for="seat_1_1" title="1 | Vip | 2000"
+                      ><span class="seat_text">1</span
+                      ><span class="armrest_right arm"></span
+                      ><span class="armrest_left arm"></span
+                      ><span class="backrest"></span
+                    ></label>
+                  </div>
+                </div>
+                <div class="grid_item">
+                  <div class="seat_item first_class">
+                    <input
+                      type="checkbox"
+                      id="seat_1_2"
+                      class="seat_checkbox"
+                    /><label for="seat_1_2" title="3 | First Class | 1500"
+                      ><span class="seat_text">3</span
+                      ><span class="armrest_right arm"></span
+                      ><span class="armrest_left arm"></span
+                      ><span class="backrest"></span
+                    ></label>
+                  </div>
+                </div>
+                <div class="grid_item">
+                  <div class="seat_item first_class">
+                    <input
+                      type="checkbox"
+                      id="seat_1_3"
+                      class="seat_checkbox"
+                    /><label for="seat_1_3" title="7 | First Class | 1500"
+                      ><span class="seat_text">7</span
+                      ><span class="armrest_right arm"></span
+                      ><span class="armrest_left arm"></span
+                      ><span class="backrest"></span
+                    ></label>
+                  </div>
+                </div>
+                <div class="grid_item"></div>
+                <div class="grid_item">
+                  <div class="seat_item business">
+                    <input
+                      type="checkbox"
+                      id="seat_1_5"
+                      class="seat_checkbox"
+                    /><label for="seat_1_5" title="13 | Business | 1000"
+                      ><span class="seat_text">13</span
+                      ><span class="armrest_right arm"></span
+                      ><span class="armrest_left arm"></span
+                      ><span class="backrest"></span
+                    ></label>
+                  </div>
+                </div>
+                <div class="grid_item">
+                  <div class="seat_item business">
+                    <input
+                      type="checkbox"
+                      id="seat_1_6"
+                      class="seat_checkbox"
+                    /><label for="seat_1_6" title="17 | Business | 1000"
+                      ><span class="seat_text">17</span
+                      ><span class="armrest_right arm"></span
+                      ><span class="armrest_left arm"></span
+                      ><span class="backrest"></span
+                    ></label>
+                  </div>
+                </div>
+                <div class="grid_item">
+                  <div class="seat_item business">
+                    <input
+                      type="checkbox"
+                      id="seat_1_7"
+                      class="seat_checkbox"
+                    /><label for="seat_1_7" title="21 | Business | 1000"
+                      ><span class="seat_text">21</span
+                      ><span class="armrest_right arm"></span
+                      ><span class="armrest_left arm"></span
+                      ><span class="backrest"></span
+                    ></label>
+                  </div>
+                </div>
+                <div class="grid_item">
+                  <div class="seat_item business">
+                    <input
+                      type="checkbox"
+                      id="seat_1_8"
+                      class="seat_checkbox"
+                    /><label for="seat_1_8" title="25 | Business | 1000"
+                      ><span class="seat_text">25</span
+                      ><span class="armrest_right arm"></span
+                      ><span class="armrest_left arm"></span
+                      ><span class="backrest"></span
+                    ></label>
+                  </div>
+                </div>
+                <div class="grid_item">
+                  <div class="seat_item business">
+                    <input
+                      type="checkbox"
+                      id="seat_1_9"
+                      class="seat_checkbox"
+                    /><label for="seat_1_9" title="29 | Business | 1000"
+                      ><span class="seat_text">29</span
+                      ><span class="armrest_right arm"></span
+                      ><span class="armrest_left arm"></span
+                      ><span class="backrest"></span
+                    ></label>
+                  </div>
+                </div>
+                <div class="grid_item">
+                  <div class="seat_item business">
+                    <input
+                      type="checkbox"
+                      id="seat_1_10"
+                      class="seat_checkbox"
+                    /><label for="seat_1_10" title="33 | Business | 1000"
+                      ><span class="seat_text">33</span
+                      ><span class="armrest_right arm"></span
+                      ><span class="armrest_left arm"></span
+                      ><span class="backrest"></span
+                    ></label>
+                  </div>
+                </div>
+                <div class="grid_item">
+                  <div class="seat_item business">
+                    <input
+                      type="checkbox"
+                      id="seat_1_11"
+                      class="seat_checkbox"
+                    /><label for="seat_1_11" title="37 | Business | 1000"
+                      ><span class="seat_text">37</span
+                      ><span class="armrest_right arm"></span
+                      ><span class="armrest_left arm"></span
+                      ><span class="backrest"></span
+                    ></label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="current_trip">
+              <form>
+                <div class="form_group p-0 mr-b-1">
+                  <label for="boading_point">Boarding Point</label>
+                  <div>
+                    <select id="boading_point">
+                      <option>South C</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form_group p-0 mr-b-1">
+                  <label for="boading_point">Boarding Point</label>
+                  <div>
+                    <select id="boading_point">
+                      <option>Busia</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form_group pricing">
+                  <div class="flex justify_between align_center pb_1">
+                    <span class="semi_bold">Selected Seats</span
+                    ><span class="bold">31,</span>
+                  </div>
+                  <div class="flex justify_between align_center pb_1">
+                    <span class="semi_bold">Total Amount</span
+                    ><span class="bold">KES 1,200.00</span>
+                  </div>
+                </div>
+                <div class="form_group">
+                  <button id="continue_btn" class="btn">CONTINUE</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+      <footer class="pos-rel" style="margin-top: 50px">
+        <div class="container">
+          <div class="row">
+            <div class="lin_away">
+              <a href="#" class="link mr_1">Privacy Policy</a
+              ><a href="#" class="link">Terms &amp; Conditions</a>
+            </div>
+            <div class="copy">
+              © Copyright 2021 Modern | All Rights Reserved
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
