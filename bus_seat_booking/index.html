@@ -132,6 +132,7 @@
                       type="checkbox"
                       id="seat_5_3"
                       class="seat_checkbox"
+                      disabled="disabled"
                     /><label for="seat_5_3" title="10 | First Class | 1500"
                       ><span class="seat_text">10</span
                       ><span class="armrest_right arm"></span
@@ -216,6 +217,7 @@
                       type="checkbox"
                       id="seat_5_9"
                       class="seat_checkbox"
+                      disabled="disabled"
                     /><label for="seat_5_9" title="32 | Business | 1000"
                       ><span class="seat_text">32</span
                       ><span class="armrest_right arm"></span
@@ -259,6 +261,7 @@
                       type="checkbox"
                       id="seat_4_2"
                       class="seat_checkbox"
+                      disabled="disabled"
                     /><label for="seat_4_2" title="5 | First Class | 1500"
                       ><span class="seat_text">5</span
                       ><span class="armrest_right arm"></span
@@ -315,6 +318,7 @@
                       type="checkbox"
                       id="seat_4_6"
                       class="seat_checkbox"
+                      disabled="disabled"
                     /><label for="seat_4_6" title="19 | Business | 1000"
                       ><span class="seat_text">19</span
                       ><span class="armrest_right arm"></span
@@ -385,6 +389,7 @@
                       type="checkbox"
                       id="seat_4_11"
                       class="seat_checkbox"
+                      disabled="disabled"
                     /><label for="seat_4_11" title="40 | Business | 1000"
                       ><span class="seat_text">40</span
                       ><span class="armrest_right arm"></span
@@ -451,6 +456,7 @@
                       type="checkbox"
                       id="seat_2_3"
                       class="seat_checkbox"
+                      disabled="disabled"
                     /><label for="seat_2_3" title="8 | First Class | 1500"
                       ><span class="seat_text">8</span
                       ><span class="armrest_right arm"></span
@@ -522,6 +528,7 @@
                       type="checkbox"
                       id="seat_2_9"
                       class="seat_checkbox"
+                      disabled="disabled"
                     /><label for="seat_2_9" title="30 | Business | 1000"
                       ><span class="seat_text">30</span
                       ><span class="armrest_right arm"></span
@@ -621,6 +628,7 @@
                       type="checkbox"
                       id="seat_1_6"
                       class="seat_checkbox"
+                      disabled="disabled"
                     /><label for="seat_1_6" title="17 | Business | 1000"
                       ><span class="seat_text">17</span
                       ><span class="armrest_right arm"></span
@@ -663,6 +671,7 @@
                       type="checkbox"
                       id="seat_1_9"
                       class="seat_checkbox"
+                      disabled="disabled"
                     /><label for="seat_1_9" title="29 | Business | 1000"
                       ><span class="seat_text">29</span
                       ><span class="armrest_right arm"></span
@@ -691,6 +700,7 @@
                       type="checkbox"
                       id="seat_1_11"
                       class="seat_checkbox"
+                      disabled="disabled"
                     /><label for="seat_1_11" title="37 | Business | 1000"
                       ><span class="seat_text">37</span
                       ><span class="armrest_right arm"></span
@@ -706,27 +716,36 @@
                 <div class="form_group p-0 mr-b-1">
                   <label for="boading_point">Boarding Point</label>
                   <div>
-                    <select id="boading_point">
+                    <select id="boading_point" name="boarding">
+                      <option disabled selected>Select Boarding Point</option>
                       <option>South C</option>
+                      <option>River Road</option>
                     </select>
                   </div>
                 </div>
                 <div class="form_group p-0 mr-b-1">
-                  <label for="boading_point">Boarding Point</label>
+                  <label for="dropping_point">Dropping Point</label>
                   <div>
-                    <select id="boading_point">
+                    <select id="dropping_point" name="dropping">
+                      <option disabled selected>Select Dropping Point</option>
                       <option>Busia</option>
+                      <option>Bumala</option>
+                      <option>Sega</option>
+                      <option>Ugunja</option>
+                      <option>Kisumu</option>
+                      <option>Luanda</option>
+                      <option>Ahero</option>
                     </select>
                   </div>
                 </div>
                 <div class="form_group pricing">
                   <div class="flex justify_between align_center pb_1">
                     <span class="semi_bold">Selected Seats</span
-                    ><span class="bold">31,</span>
+                    ><span class="bold seat_number"></span>
                   </div>
                   <div class="flex justify_between align_center pb_1">
                     <span class="semi_bold">Total Amount</span
-                    ><span class="bold">KES 1,200.00</span>
+                    ><span class="bold total_amount">Ksh 0.00</span>
                   </div>
                 </div>
                 <div class="form_group">
@@ -750,6 +769,13 @@
           </div>
         </div>
       </footer>
+    </div>
+
+    <div class="message">
+      <p>message</p>
+      <div class="progressbar">
+        <div style="transition: width 5000ms linear 0s; width: 0%"></div>
+      </div>
     </div>
     <script src="app.js"></script>
   </body>
