@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Salsa&display=swap');
+
+:root {
+  --black: #000;
+  --white: #fff;
+  --primary: #9175db;
+  --secondary: #ffb9db;
+  --grey: #f8f8f7;
+  --muted: #d3d3d3;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  color: var(--black);
+  background: var(--white);
+  font-size: 0.875rem;
+  font-family: 'Salsa', cursive;
+}
+
+.container {
+  margin-right: 7.75rem;
+  margin-left: 7.75rem;
+}
+
+/* header */
+
+.row {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.search input {
+  width: 32rem;
+}
+
+.search span {
+  background: var(--grey);
+  color: var(--black);
+  height: 3rem;
+}
+
+.form_control {
+  height: 3rem;
+  border-radius: 12px;
+  background: var(--grey);
+  color: var(--black);
+  padding: 1.125rem 1.3125rem;
+  font-size: 0.75rem;
+  border: none;
+}
+
+.form_control:focus {
+  outline: none;
+}
+
+.form_control::placeholder {
+  color: var(--muted);
+}
