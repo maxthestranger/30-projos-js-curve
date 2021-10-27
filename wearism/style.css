@@ -263,8 +263,6 @@ img {
 
 .prod span {
   position: absolute;
-  bottom: 20px;
-  left: 20px;
   background: var(--white);
   width: 35px;
   height: 35px;
@@ -273,6 +271,16 @@ img {
   align-items: center;
   border-radius: 50%;
   transition: all 0.2s ease-in-out;
+}
+
+.prod .fav {
+  bottom: 20px;
+  left: 20px;
+}
+
+.prod .cart_cart {
+  bottom: 20px;
+  right: 20px;
 }
 
 .prod span:hover {
