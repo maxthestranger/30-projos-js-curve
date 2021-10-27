@@ -22,6 +22,7 @@ body {
   background: var(--white);
   font-size: 0.875rem;
   font-family: 'Salsa', cursive;
+  transition: all 0.2s ease-in-out;
 }
 
 .container {
@@ -231,8 +232,15 @@ img {
 .row_like {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   margin-bottom: 30px;
+  width: 100%;
+  flex-basis: 100%;
+  flex-wrap: wrap;
+}
+
+.row_like.pills {
+  justify-content: space-between;
 }
 
 .row_like button {
@@ -252,9 +260,11 @@ img {
 }
 
 .prod {
-  max-width: 20%;
+  max-width: 23%;
   cursor: pointer;
   position: relative;
+  margin-bottom: 30px;
+  margin-left: 2%;
 }
 
 .prod:hover > img {
