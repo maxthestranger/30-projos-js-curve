@@ -31,6 +31,20 @@ body {
 
 /* header */
 
+header {
+  top: 0px;
+  position: fixed;
+  background: var(--white);
+  width: 100%;
+  z-index: 1;
+}
+
+header.active {
+  box-shadow: 1px 6px 8px -4px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 1px 6px 8px -4px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 1px 6px 8px -4px rgba(0, 0, 0, 0.1);
+}
+
 .row {
   margin-top: 3rem;
   margin-bottom: 3rem;
@@ -100,6 +114,10 @@ body {
   text-align: center;
 }
 
+main {
+  margin-top: 150px;
+}
+
 .hero .container {
   justify-content: center;
   flex-direction: column;
@@ -145,6 +163,10 @@ body {
 .col_1 {
   width: 20%;
   margin-top: 2rem;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 153px;
+  align-self: flex-start;
 }
 
 .col_1 .side {
@@ -222,6 +244,7 @@ img {
   border-radius: 12px;
   cursor: pointer;
   min-width: 15%;
+  transition: all 0.2s ease-in-out;
 }
 
 .row_like button:hover {
