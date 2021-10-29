@@ -1,5 +1,7 @@
 let sideNav = document.querySelectorAll('.side');
 let row_like = document.querySelector('.row_like.product');
+let cart_number = document.querySelector('.cart_number');
+let cartNum = 0;
 
 const allClothes = [
   {
@@ -52,22 +54,24 @@ const allClothes = [
   },
 ];
 
+const cartObj = [];
+
 sideNav.forEach((side) => {
   side.addEventListener('click', function () {
     if (this.innerText === 'NEW IN') {
       this.classList.add('active');
       row_like.innerHTML = '';
-      allClothes.map((cloth) => {
-        crtElem(cloth);
+      allClothes.map((cloth, index) => {
+        crtElem(cloth, index);
       });
     }
 
     if (this.innerText === 'BEAUTY') {
       this.classList.add('active');
       row_like.innerHTML = '';
-      allClothes.map((cloth) => {
+      allClothes.map((cloth, index) => {
         if (cloth.category === 'beauty') {
-          crtElem(cloth);
+          crtElem(cloth, index);
         }
       });
     }
@@ -75,9 +79,9 @@ sideNav.forEach((side) => {
     if (this.innerText === 'BAGS') {
       this.classList.add('active');
       row_like.innerHTML = '';
-      allClothes.map((cloth) => {
+      allClothes.map((cloth, index) => {
         if (cloth.category === 'bags') {
-          crtElem(cloth);
+          crtElem(cloth, index);
         }
       });
     }
@@ -85,16 +89,16 @@ sideNav.forEach((side) => {
     if (this.innerText === 'KNITWEAR') {
       this.classList.add('active');
       row_like.innerHTML = '';
-      allClothes.map((cloth) => {
+      allClothes.map((cloth, index) => {
         if (cloth.category === 'knitwear') {
-          crtElem(cloth);
+          crtElem(cloth, index);
         }
       });
     }
   });
 });
 
-function crtElem(cloth) {
+function crtElem(cloth, index) {
   let newDiv = document.createElement('div');
   newDiv.classList.add('prod');
   newDiv.innerHTML = `
@@ -102,16 +106,25 @@ function crtElem(cloth) {
         <span class="fav">
             <i class="bi bi-heart"></i>
         </span>
-        <span class="cart_cart">
-            <i class="bi bi-cart"></i>
-        </span>
+        <div class="prod_info">
+          <h4>${cloth.name}</h4>
+          <h2>${cloth.price}</h2>
+          <button class="add_to_cart" type="button" onClick="handleClick(this)" data-value="${index}">
+            <i class="bi bi-cart me-2"></i> Add to Cart
+          </button>
       `;
 
   row_like.append(newDiv);
 }
 
+function handleClick(self) {
+  let prodIndex = self.getAttribute('data-value');
+  cartNum++;
+  cart_number.innerText = cartNum;
+}
+
 window.addEventListener('load', function () {
-  allClothes.map((cloth) => {
-    crtElem(cloth);
+  allClothes.map((cloth, index) => {
+    crtElem(cloth, index);
   });
 });
