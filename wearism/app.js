@@ -1,6 +1,7 @@
 let sideNav = document.querySelectorAll('.side');
 let row_like = document.querySelector('.row_like.product');
 let cart_number = document.querySelector('.cart_number');
+let col_1 = document.querySelector('.col_1');
 let cartNum = 0;
 
 const allClothes = [
@@ -59,6 +60,11 @@ const cartObj = [];
 sideNav.forEach((side) => {
   side.addEventListener('click', function () {
     if (this.innerText === 'NEW IN') {
+      // Array.from(col_1.children).forEach((child) => {
+      //   if (child.classList.contains('active')) {
+      //     child.classList.romove('active');
+      //   }
+      // });
       this.classList.add('active');
       row_like.innerHTML = '';
       allClothes.map((cloth, index) => {
